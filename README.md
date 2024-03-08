@@ -2,6 +2,31 @@
 
 Collection of combinatorial problems with words and text generation
 
+## Setup
+
+Pre-requisites
+
+- Python > 3.7
+- pipenv
+
+Install dependencies using:
+
+```
+pipenv install --dev
+```
+
+## Running test suite
+
+```
+pipenv run pytest
+```
+
+or simply:
+
+```
+./test.sh
+```
+
 ## Problem: Band Name in Lyrics
 
 Provided a name of a band and the lyrics from one of their songs, return a portion of the lyrics so that the name of the band can be read vertically.
