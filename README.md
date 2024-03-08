@@ -18,12 +18,6 @@ pipenv install --dev
 ## Running test suite
 
 ```
-pipenv run pytest
-```
-
-or simply:
-
-```
 ./test.sh
 ```
 
