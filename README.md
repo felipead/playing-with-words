@@ -17,6 +17,8 @@ pipenv install --dev
 
 ## Running test suite
 
+Tests are run with pytest withing the pipenv environment. A simple shortcut:
+
 ```
 ./test.sh
 ```
