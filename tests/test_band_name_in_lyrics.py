@@ -1,11 +1,11 @@
-from words import band_name
+from words.band_name_in_lyrics import display_vertically
 
 
-def test_display_vertically_exact_fit():
+def test_band_name_in_lyrics_display_vertically_exact_fit():
     name = 'Sun'
     lyrics = 'plays under the moon'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     expected = '''\
 plays
@@ -16,11 +16,11 @@ plays
     assert output == expected
 
 
-def test_display_vertically_surrounded_with_words():
+def test_band_name_in_lyrics_display_vertically_surrounded_with_words():
     name = 'Sun'
     lyrics = 'foo bar ... plays under the moon ... foo bar'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     expected = '''\
 plays
@@ -31,11 +31,11 @@ plays
     assert output == expected
 
 
-def test_display_vertically_case_insensitive():
+def test_band_name_in_lyrics_display_vertically_case_insensitive():
     name = 'Sun'
     lyrics = 'foo bar ... plays Under the MOON ... foo bar'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     expected = '''\
 plays
@@ -46,11 +46,11 @@ plays
     assert output == expected
 
 
-def test_display_vertically_extra_white_space():
+def test_band_name_in_lyrics_display_vertically_extra_white_space():
     name = 'Sun'
     lyrics = 'foo bar  ... plays under    the\n  moon  ... foo  bar'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     expected = '''\
 plays
@@ -61,11 +61,11 @@ plays
     assert output == expected
 
 
-def test_display_vertically_when_the_name_has_repeated_words():
+def test_band_name_in_lyrics_display_vertically_when_the_name_has_repeated_words():
     name = 'Sunn'
     lyrics = 'foo bar  ... plays under    the\n  moon but navigates the sea ... foo  bar'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     expected = '''\
 plays
@@ -77,7 +77,7 @@ plays
     assert output == expected
 
 
-def test_display_vertically_sample_2():
+def test_band_name_in_lyrics_display_vertically_sample_2():
     name = 'Metallica'
     lyrics = '''\
 Barking of machine gun fire, does nothing to me now
@@ -104,7 +104,7 @@ You coward
 You servant
 You blind man
 '''
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     expected = '''\
    machine gun
@@ -121,7 +121,7 @@ fire, does
     assert output == expected
 
 
-def test_display_vertically_sample_3():
+def test_band_name_in_lyrics_display_vertically_sample_3():
     name = 'Everything'
     lyrics = '''\
 I step off the train
@@ -169,7 +169,7 @@ Like the deserts miss the rain
 (Deserts miss the rain)
 '''
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     expected = '''\
    step off the train I'm walking down your street again And past your door But you don't
@@ -187,52 +187,52 @@ somewhere
     assert output == expected
 
 
-def test_display_vertically_not_found_lyrics_too_short_1():
+def test_band_name_in_lyrics_display_vertically_not_found_lyrics_too_short_1():
     name = 'Sun'
     lyrics = 'plays the moon'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     assert output is None
 
 
-def test_display_vertically_not_found_lyrics_too_short_2():
+def test_band_name_in_lyrics_display_vertically_not_found_lyrics_too_short_2():
     name = 'Sun'
     lyrics = 'under the moon'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     assert output is None
 
 
-def test_display_vertically_not_found_lyrics_too_short_3():
+def test_band_name_in_lyrics_display_vertically_not_found_lyrics_too_short_3():
     name = 'Sun'
     lyrics = 'plays under'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     assert output is None
 
 
-def test_display_vertically_not_found_1():
+def test_band_name_in_lyrics_display_vertically_not_found_1():
     name = 'Cobra'
     lyrics = 'my old man told me this story about a witch and a rat'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     assert output is None
 
 
-def test_display_vertically_not_found_2():
+def test_band_name_in_lyrics_display_vertically_not_found_2():
     name = 'ABBA'
     lyrics = '... the quick brown fox jumps over the lazy dog ...'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     assert output is None
 
 
-def test_display_vertically_not_found_3():
+def test_band_name_in_lyrics_display_vertically_not_found_3():
     name = 'Metallica'
     lyrics = '''\
 Barking of machinegun fire,
@@ -242,23 +242,23 @@ glory seeker trends,
 Bodies fill the fields I see, the slaughter never ends\
 '''
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
     assert output is None
 
 
-def test_display_vertically_empty_name():
+def test_band_name_in_lyrics_display_vertically_empty_name():
     name = ''
     lyrics = '... the quick brown fox jumps over the lazy dog ...'
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     assert output is None
 
 
-def test_display_vertically_empty_lyrics():
+def test_band_name_in_lyrics_display_vertically_empty_lyrics():
     name = 'Metallica'
     lyrics = ''
 
-    output = band_name.display_vertically(name, lyrics)
+    output = display_vertically(name, lyrics)
 
     assert output is None
